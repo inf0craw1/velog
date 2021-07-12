@@ -1,16 +1,15 @@
 import "./css/App.css";
 import Body from "./components/Body";
-import { render } from "@testing-library/react";
 
 function App() {
-  render(){
-    return (
-    <div className="App">
-      Velog
-      <Body></Body>
+  return (
+    <div className="Body">
+      <Body>
+        게시글
+        <div>2021. 7. 12</div>
+      </Body>
     </div>
   );
-  }
 }
 
 export default App;

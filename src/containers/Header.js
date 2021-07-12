@@ -3,7 +3,6 @@ import React from "react";
 import Logo  from "../components/Logo";
 import HeaderRight from "../components/HeaderRight";
 
-import "../css/Header.css";
 
 import styled from "styled-components";
 

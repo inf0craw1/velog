@@ -1,11 +1,17 @@
 import React from "react";
+import styled from "styled-components";
 
+const StyledLogo = styled.div`
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+`;
 function Logo(){
 
     return (
-        <div className="Logo">
+        <StyledLogo className="Logo">
             Velog
-        </div>
+        </StyledLogo>
     );
 }
 

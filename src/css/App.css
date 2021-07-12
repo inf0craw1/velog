@@ -7,26 +7,3 @@ body {
   width: 1000px;
   height: 1000px;
 }
-
-footer {
-  border-top: 1px solid #efefef;
-  height: 400px;
-  width: 100%;
-  background-color: white;
-  color: #171717;
-  font-size: 14px;
-  display: flex;
-  padding-top: 80px;
-}
-.container_footer > div {
-  margin-bottom: 10px;
-}
-.creator_footer {
-  display: flex;
-}
-.describe_footer {
-  display: flex;
-}
-.title_footer {
-  font-weight: 700;
-}

@@ -6,7 +6,7 @@ function App() {
     <div className="Body">
       <Body>
         게시글
-        <div>2021. 7. 12</div>
+        <div>2021. 7. 12 </div>
       </Body>
     </div>
   );

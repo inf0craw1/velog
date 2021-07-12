@@ -1,7 +1,7 @@
 import React from "react";
 
-import Logo  from "../component/Logo";
-import HeaderRight from "../component/HeaderRight";
+import Logo  from "../components/Logo";
+import HeaderRight from "../components/HeaderRight";
 
 import "../css/Header.css";
 

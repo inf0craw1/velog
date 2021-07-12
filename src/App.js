@@ -1,7 +1,6 @@
 import "./containers/Header";
 import Header from "./containers/Header";
 import Body from "./components/Body";
-
 import "./css/App.css";
 
 import Footer from "./components/Footer";

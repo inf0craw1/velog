@@ -1,5 +1,5 @@
-import "./container/Header";
-import Header from "./container/Header";
+import "./containers/Header";
+import Header from "./containers/Header";
 import "./css/App.css";
 import Footer from "./components/Footer";
 

@@ -1,6 +1,7 @@
 import "./container/Header";
 import Header from "./container/Header";
 import "./css/App.css";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
 
       </Header>
       Velog
+      <Footer></Footer>
     </div>
   );
 }

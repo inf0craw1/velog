@@ -4,6 +4,7 @@ import Body from "./components/Body";
 import "./css/App.css";
 
 import Footer from "./components/Footer";
+import { BrowserRouter, Link } from "react-router-dom";
 
 function App() {
   return (
@@ -14,7 +15,9 @@ function App() {
       <div className="Body">
         <Body>
           게시글
-          <div>2021. 7. 12 </div>
+          <BrowserRouter>
+          <Link to="/abc"><div>2021. 7. 12 </div></Link>
+          </BrowserRouter>
         </Body>
       </div>
       <Footer></Footer>

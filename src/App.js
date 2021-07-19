@@ -1,6 +1,7 @@
 import "./containers/Header";
 import Header from "./containers/Header";
 import Body from "./components/Body";
+import Login from "./containers/Login"
 import "./css/App.css";
 import Footer from "./components/Footer";
 import Post from "./components/jina/Post";
@@ -9,10 +10,25 @@ import Post from "./components/jina/Post";
 import PostSample from "./components/jina/PostSampleData";
 const sample_post = PostSample;
 
+import { useState } from "react";
+
 function App() {
+  const [popupLogin, setPopupLogin] = useState(0);
+
+  function toggleLogin(){
+    
+    if(popupLogin) {
+      setPopupLogin(0);
+    } else {
+      setPopupLogin(1);
+    }
+    console.log(popupLogin);
+
+  }
+
   return (
     <div className="App">
-      <Header></Header>
+
       <div className="Body">
         <Body>
           게시글
@@ -20,6 +36,8 @@ function App() {
         </Body>
       </div>
       <Footer></Footer>
+
+      {popupLogin === 1 ? <Login toggleLogin={toggleLogin}></Login> : null}
     </div>
   );
 }

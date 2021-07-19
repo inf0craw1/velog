@@ -3,8 +3,12 @@ import Header from "./containers/Header";
 import Body from "./components/Body";
 import Login from "./containers/Login"
 import "./css/App.css";
-
 import Footer from "./components/Footer";
+import Post from "./components/jina/Post";
+
+//박진아 작성
+import PostSample from "./components/jina/PostSampleData";
+const sample_post = PostSample;
 
 import { useState } from "react";
 
@@ -24,9 +28,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header toggleLogin={toggleLogin}>
 
-      </Header>
       <div className="Body">
         <Body>
           게시글

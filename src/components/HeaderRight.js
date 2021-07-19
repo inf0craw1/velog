@@ -46,18 +46,14 @@ const StyledLoginButton  = styled.div`
     }
 `;
 
-function HeaderRight(){
-
-    const handleClick = function (){
-        console.log("login clicked");
-    }
+function HeaderRight({toggleLogin, ...args}){
 
     return (
         <StyledHeaderRight className="header-right">
             <StyledSearchButton className="search-button">
                 🔍
             </StyledSearchButton>
-            <StyledLoginButton className="login-button" onClick={handleClick}>
+            <StyledLoginButton className="login-button" onClick={toggleLogin}>
                 로그인
             </StyledLoginButton>
 

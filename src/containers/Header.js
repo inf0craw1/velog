@@ -15,11 +15,11 @@ const StyledHeader = styled.div`
     align-items: center;
 `;
 
-function Header() {
+function Header({toggleLogin, ...args}) {
     return (
         <StyledHeader className="header">
             <Logo></Logo>
-            <HeaderRight></HeaderRight>
+            <HeaderRight toggleLogin={toggleLogin}></HeaderRight>
         </StyledHeader> 
 
     );

@@ -14,11 +14,10 @@ function App() {
     <div className="App">
       <Header></Header>
       <div className="Body">
-        <Post post={sample_post}></Post>
-        {/* <Body>
+        <Body>
           게시글
           <div>2021. 7. 12 </div>
-        </Body> */}
+        </Body>
       </div>
       <Footer></Footer>
     </div>

@@ -4,18 +4,20 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Post from './components/jina/Post';
+import PostSample from "./components/jina/PostSampleData";
+
+const sample_post = PostSample;
 
 ReactDOM.render(
-  <React.StrictMode>
     <BrowserRouter>
       <Switch>
         <Route exact path="/" component={App}></Route>
+        <Route path="/post" component={() => <Post post={sample_post}> </Post>}></Route>
+        
       </Switch>
     
-    </BrowserRouter>
-
-    <App />
-  </React.StrictMode>,
+    </BrowserRouter>,
   document.getElementById('root')
 );
 

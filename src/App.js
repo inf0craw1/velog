@@ -4,7 +4,7 @@ import Body from "./components/Body";
 import Login from "./containers/Login";
 import "./css/App.css";
 import Footer from "./components/Footer";
-import { BrowserRouter, Route, Link, Switch } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Post from "./components/jina/Post";
 import { useState } from "react";
 

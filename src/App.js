@@ -4,13 +4,15 @@ import Body from "./components/Body";
 import Login from "./containers/Login"
 import "./css/App.css";
 import Footer from "./components/Footer";
+import { BrowserRouter, Link } from "react-router-dom";
 import Post from "./components/jina/Post";
+import { useState } from "react";
+
 
 //박진아 작성
 import PostSample from "./components/jina/PostSampleData";
 const sample_post = PostSample;
 
-import { useState } from "react";
 
 function App() {
   const [popupLogin, setPopupLogin] = useState(0);
@@ -32,7 +34,9 @@ function App() {
       <div className="Body">
         <Body>
           게시글
-          <div>2021. 7. 12 </div>
+          <BrowserRouter>
+          <Link to="/abc"><div>2021. 7. 12 </div></Link>
+          </BrowserRouter>
         </Body>
       </div>
       <Footer></Footer>

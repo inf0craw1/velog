@@ -4,17 +4,15 @@ import Body from "./components/Body";
 import Login from "./containers/Login"
 import "./css/App.css";
 import Footer from "./components/Footer";
-<<<<<<< HEAD
 import { BrowserRouter, Link } from "react-router-dom";
-=======
 import Post from "./components/jina/Post";
+import { useState } from "react";
+
 
 //박진아 작성
 import PostSample from "./components/jina/PostSampleData";
 const sample_post = PostSample;
 
-import { useState } from "react";
->>>>>>> fb696fa3986cd2e842507273161bb679b120285a
 
 function App() {
   const [popupLogin, setPopupLogin] = useState(0);

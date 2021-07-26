@@ -4,7 +4,7 @@ import Body from "./components/Body";
 import Login from "./containers/Login"
 import "./css/App.css";
 import Footer from "./components/Footer";
-import { BrowserRouter, Link } from "react-router-dom";
+import { BrowserRouter, Route, Link, Switch } from "react-router-dom";
 import Post from "./components/jina/Post";
 import { useState } from "react";
 
@@ -30,15 +30,19 @@ function App() {
 
   return (
     <div className="App">
-
+      
+      <Header></Header>
+      
       <div className="Body">
-        <Body>
-          게시글
-          <BrowserRouter>
-          <Link to="/abc"><div>2021. 7. 12 </div></Link>
-          </BrowserRouter>
-        </Body>
+      
+        <Link to="/post">
+          <Body>
+            게시글
+            <div>2021. 7. 12 </div>
+          </Body>
+        </Link>
       </div>
+
       <Footer></Footer>
 
       {popupLogin === 1 ? <Login toggleLogin={toggleLogin}></Login> : null}

@@ -1,39 +1,35 @@
 import "./containers/Header";
 import Header from "./containers/Header";
 import Body from "./components/Body";
-import Login from "./containers/Login"
+import Login from "./containers/Login";
 import "./css/App.css";
 import Footer from "./components/Footer";
 import Post from "./components/jina/Post";
-
+import { useState } from "react";
 //박진아 작성
 import PostSample from "./components/jina/PostSampleData";
 const sample_post = PostSample;
 
-import { useState } from "react";
-
 function App() {
   const [popupLogin, setPopupLogin] = useState(0);
 
-  function toggleLogin(){
-    
-    if(popupLogin) {
+  function toggleLogin() {
+    if (popupLogin) {
       setPopupLogin(0);
     } else {
       setPopupLogin(1);
     }
     console.log(popupLogin);
-
   }
 
   return (
     <div className="App">
-
       <div className="Body">
-        <Body>
+        {/* <Body>
           게시글
           <div>2021. 7. 12 </div>
-        </Body>
+        </Body> */}
+        <Post post={sample_post}></Post>
       </div>
       <Footer></Footer>
 

@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import HashTagList from "./HashTagList";
+import Comment from "./CreateComment";
 import LeftsideUtil from "./LeftsideUtil";
 import pizzaThumnail from "./pizza.jpeg";
 
@@ -36,6 +37,8 @@ function Post({ post }) {
             thumnail={post.thumnail}
           ></PostHeader>
           <ContentsWrapper>{post.contents}</ContentsWrapper>
+          <div className="tmp">프로필란</div>
+          <Comment />
         </div>
       </PostWrapper>
     </>
@@ -45,6 +48,11 @@ function Post({ post }) {
 const PostWrapper = styled.div`
   padding: 80px 100px;
   display: flex;
+
+  .tmp {
+    border: 1px solid black;
+    padding: 30px 0;
+  }
 `;
 const InformationWrapper = styled.div`
   display: flex;
@@ -65,6 +73,7 @@ const DateWrapper = styled.div`
 `;
 const ContentsWrapper = styled.div`
   font-size: 1.2em;
+  margin-bottom: 80px;
 `;
 
 const ThumnailWrapper = styled.div`

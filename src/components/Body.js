@@ -2,7 +2,7 @@ import smile from "../img/smile.jpg";
 import img2 from "../img/img_2.jpg";
 import rupi from "../img/rupi.png";
 import React from "react";
-import "../css/App.css";
+import "../css/Body.css";
 import styled from "styled-components";
 
 const Img = styled.div`

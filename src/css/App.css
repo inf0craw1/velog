@@ -35,10 +35,3 @@ footer {
 .title_footer {
   font-weight: 700;
 }
-.container {
-  display: felx;
-  justify-content: space-between;
-}
-.item {
-  flex: 1;
-}

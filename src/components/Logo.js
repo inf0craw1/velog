@@ -5,6 +5,8 @@ const StyledLogo = styled.div`
     font-size: 28px;
     font-weight: bold;
     cursor: pointer;
+
+    color: black;
 `;
 function Logo(){
 

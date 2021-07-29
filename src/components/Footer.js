@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import React from "react";
 
 const FooterBlock = styled.footer`
   border-top: 1px solid #efefef;

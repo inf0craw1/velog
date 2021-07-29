@@ -1,3 +1,4 @@
+import React from "react";
 import "./containers/Header";
 import Header from "./containers/Header";
 import Body from "./components/Body";
@@ -11,7 +12,6 @@ import { useState } from "react";
 //박진아 작성
 import PostSample from "./components/jina/PostSampleData";
 const sample_post = PostSample;
-
 
 function App() {
   const [popupLogin, setPopupLogin] = useState(0);
@@ -27,16 +27,11 @@ function App() {
 
   return (
     <div className="App">
-      
       <Header></Header>
-      
+
       <div className="Body">
-      
         <Link to="/post">
-          <Body>
-            게시글
-            <div>2021. 7. 12 </div>
-          </Body>
+          <Body />
         </Link>
       </div>
 

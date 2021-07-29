@@ -27,7 +27,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header></Header>
+      <Header toggleLogin={toggleLogin}></Header>
 
       <div className="Body">
         <Link to="/post">

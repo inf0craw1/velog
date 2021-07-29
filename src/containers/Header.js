@@ -1,10 +1,10 @@
 import React from "react";
+import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 import Logo  from "../components/Logo";
 import HeaderRight from "../components/HeaderRight";
 
-
-import styled from "styled-components";
 
 const StyledHeader = styled.div`
     height: 64px;
@@ -18,7 +18,9 @@ const StyledHeader = styled.div`
 function Header({toggleLogin, ...args}) {
     return (
         <StyledHeader className="header">
-            <Logo></Logo>
+            <Link to="/" style={{ textDecoration: 'none' }}>
+                <Logo />
+            </Link>
             <HeaderRight toggleLogin={toggleLogin}></HeaderRight>
         </StyledHeader> 
 

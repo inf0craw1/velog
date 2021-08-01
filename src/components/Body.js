@@ -4,6 +4,7 @@ import rupi from "../img/rupi.png";
 import React from "react";
 import "../css/Body.css";
 import styled from "styled-components";
+import {Link} from 'react-router-dom'
 
 const Img = styled.div`
   width: 310px;
@@ -179,7 +180,9 @@ function Body() {
         <Border />
         <div style={{ display: "flex" }}>
           <FooterBlock>
-            <User />
+            <Link to="/profile1">
+              <User />
+            </Link>  
           </FooterBlock>
           <Likes>❤ n</Likes>
         </div>
@@ -189,7 +192,9 @@ function Body() {
         <Border />
         <div style={{ display: "flex" }}>
           <FooterBlock>
-            <User1 />
+            <Link to="/profile2">
+              <User1 />      
+            </Link>        
           </FooterBlock>
           <Likes>❤ n</Likes>
         </div>
@@ -199,7 +204,9 @@ function Body() {
         <Border />
         <div style={{ display: "flex" }}>
           <FooterBlock>
-            <User2 />
+            <Link to="/profile3">
+              <User2 />      
+            </Link>
           </FooterBlock>
           <Likes>❤ n</Likes>
         </div>

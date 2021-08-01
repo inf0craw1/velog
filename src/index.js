@@ -19,9 +19,9 @@ ReactDOM.render(
         <Route exact path="/" component={App}></Route>
         <Route path="/post" component={() => <Post post={sample_post}> </Post>}></Route>
         <Route exact path="/profile1" component={Profile1}></Route>
-        <Route exact path="/User1post" component={User1post}></Route>
-        <Route exact path="/User1info" component={User1info}></Route>
-        <Route exact path="/User1series" component={User1series}></Route>
+        <Route path="/User1post" component={User1post}></Route>
+        <Route path="/User1info" component={User1info}></Route>
+        <Route path="/User1series" component={User1series}></Route>
       </Switch>
     
     </BrowserRouter>,

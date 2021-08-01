@@ -11,14 +11,15 @@ const MenuItem = ({active, children, to}) => (
 const Profile1 = () => {
     return (
         <div>
-            <div className="App">
+            <div className="logo">
                 <Header></Header>
+                <div className="menu">
+                    <MenuItem to={'/User1post'}>글</MenuItem>
+                    <MenuItem to={'/User1series'}>시리즈</MenuItem>
+                    <MenuItem to={'/User1info'}>소개</MenuItem>
+                    </div>
             </div>
-            <div className="menu">
-                <MenuItem>글</MenuItem>
-                <MenuItem>시리즈</MenuItem>
-                <MenuItem>소개</MenuItem>
-            </div>
+            
         </div>
     );
 };

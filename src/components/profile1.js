@@ -1,31 +1,26 @@
 import React from 'react';
-import { Link } from 'react-router';
 import './Profile.css';
+import Header from "../containers/Header";
 
 const MenuItem = ({active, children, to}) => (
-    <Link to={to} className={`menu-item ${active ? 'active': ''}`}>
+    <div className="menu-item">
             {children}
-    </Link>
-);
+    </div>
+)
 
-const profile1 = (props, context) => {
-    const { router } = context;
+const Profile1 = () => {
     return (
         <div>
-            <div className="logo">
-                velog
+            <div className="App">
+                <Header></Header>
             </div>
             <div className="menu">
-                <MenuItem to={'/'} active={router.isActive('/', true)}>글</MenuItem>
-                <MenuItem to={'/'} active={router.isActive('/about')}>시리즈</MenuItem>
-                <MenuItem to={'/'} active={router.isActive('/post')}>소개</MenuItem>
+                <MenuItem>글</MenuItem>
+                <MenuItem>시리즈</MenuItem>
+                <MenuItem>소개</MenuItem>
             </div>
         </div>
     );
 };
 
-Header.contextTypes = {
-    router: React.PropTypes.object
-}
-
-export default profile1;
+export default Profile1;

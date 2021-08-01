@@ -180,7 +180,7 @@ function Body() {
         <Border />
         <div style={{ display: "flex" }}>
           <FooterBlock>
-            <Link to="/profile1">
+            <Link to="/Profile1">
               <User />
             </Link>  
           </FooterBlock>
@@ -192,7 +192,7 @@ function Body() {
         <Border />
         <div style={{ display: "flex" }}>
           <FooterBlock>
-            <Link to="/profile2">
+            <Link to="/Profile2">
               <User1 />      
             </Link>        
           </FooterBlock>
@@ -204,7 +204,7 @@ function Body() {
         <Border />
         <div style={{ display: "flex" }}>
           <FooterBlock>
-            <Link to="/profile3">
+            <Link to="/Profile3">
               <User2 />      
             </Link>
           </FooterBlock>

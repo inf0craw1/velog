@@ -1,7 +1,9 @@
 import React from "react";
+import GlobalStyle from "../../styles/GlobalStyle";
 import styled from "styled-components";
 import HashTagList from "./HashTagList";
 import Comment from "./CreateComment";
+import CommentsList from "./CommentsList";
 import LeftsideUtil from "./LeftsideUtil";
 import pizzaThumnail from "./pizza.jpeg";
 
@@ -11,7 +13,7 @@ function Thumnail({ thumnail }) {
 
 function PostHeader({ title, author, date, thumnail }) {
   return (
-    <>
+    <div>
       <TitleWrapper>{title}</TitleWrapper>
       <InformationWrapper>
         <AuthorWrapper>{author}</AuthorWrapper>
@@ -19,14 +21,15 @@ function PostHeader({ title, author, date, thumnail }) {
       </InformationWrapper>
       <HashTagList />
       <Thumnail thumnail={thumnail} />
-    </>
+    </div>
   );
 }
 
 function Post({ post }) {
   console.log(post);
   return (
-    <>
+    <div className="App">
+      <GlobalStyle />
       <LeftsideUtil />
       <PostWrapper>
         <div>
@@ -39,9 +42,10 @@ function Post({ post }) {
           <ContentsWrapper>{post.contents}</ContentsWrapper>
           <div className="tmp">프로필란</div>
           <Comment />
+          <CommentsList />
         </div>
       </PostWrapper>
-    </>
+    </div>
   );
 }
 
@@ -50,8 +54,10 @@ const PostWrapper = styled.div`
   display: flex;
 
   .tmp {
-    border: 1px solid black;
+    background-color: rgb(250, 250, 250);
     padding: 30px 0;
+    color: gray;
+    margin: 90px 0;
   }
 `;
 const InformationWrapper = styled.div`

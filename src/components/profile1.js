@@ -17,8 +17,8 @@ const profile1 = (props, context) => {
             </div>
             <div className="menu">
                 <MenuItem to={'/'} active={router.isActive('/', true)}>글</MenuItem>
-                <MenuItem to={'/about'} active={router.isActive('/about')}>시리즈</MenuItem>
-                <MenuItem to={'/post'} active={router.isActive('/post')}>소개</MenuItem>
+                <MenuItem to={'/'} active={router.isActive('/about')}>시리즈</MenuItem>
+                <MenuItem to={'/'} active={router.isActive('/post')}>소개</MenuItem>
             </div>
         </div>
     );

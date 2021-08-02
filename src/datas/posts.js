@@ -1,7 +1,7 @@
 export const Posts = [
   {
     idx: 1,
-    user_id: "jsy1999",
+    id: "jsy1999",
     title: "프론트엔드 면접",
     hashtag: ["꿀팁"],
     date: "20210715",
@@ -18,7 +18,7 @@ export const Posts = [
   },
   {
     idx: 2,
-    user_id: "heyheyhey ",
+    id: "heyheyhey ",
     title: "4년차에 억대연봉 개발자",
     hashtag: ["꿀팁"],
     date: "20210715",
@@ -36,7 +36,7 @@ export const Posts = [
 
   {
     idx: 3,
-    user_id: "Zanmang_Rupi",
+    id: "Zanmang_Rupi",
     title: "Unity 개발자의 Flutter 앱 개발기🤖",
     hashtag: ["게임", "Flutter"],
     date: "20210715",

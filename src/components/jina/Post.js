@@ -20,6 +20,7 @@ function PostHeader({ title, author, date, thumnail }) {
         <DateWrapper>{date}</DateWrapper>
       </InformationWrapper>
       <HashTagList />
+      <SomethingBlock></SomethingBlock>
       <Thumnail thumnail={thumnail} />
     </div>
   );
@@ -48,6 +49,12 @@ function Post({ post }) {
     </div>
   );
 }
+
+const SomethingBlock = styled.div`
+  height: 150px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+`;
 
 const PostWrapper = styled.div`
   padding: 80px 100px;

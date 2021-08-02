@@ -16,6 +16,7 @@ function CreateComment() {
 const CreateCommentBlock = styled.div`
   .num_of_comments {
     font-weight: bold;
+    margin-bottom: 8px;
   }
   .button_wrapper {
     display: flex;

@@ -1,41 +1,55 @@
-import React from "react";
+import React, { useState } from "react";
 import "./containers/Header";
 import Header from "./containers/Header";
 import Body from "./components/Body";
 import Login from "./containers/Login";
 import Footer from "./components/Footer";
-import { Link } from "react-router-dom";
 import Post from "./components/jina/Post";
-import { useState } from "react";
+
+import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
+import Profile1 from './components/Profile1';
+import User1post from './components/users/User1post';
+import User1info from './components/users/User1info';
+import User1series from './components/users/User1series';
+import Search from './containers/Search';
+import PostSample from "./components/jina/PostSampleData";
+
 
 import GlobalStyle from "./styles/GlobalStyle";
 
+
 function App() {
-  const [popupLogin, setPopupLogin] = useState(0);
+  const sample_post = PostSample;
+  const [popupLogin, setPopupLogin] = useState(false);
 
   function toggleLogin() {
-    if (popupLogin) {
-      setPopupLogin(0);
-    } else {
-      setPopupLogin(1);
-    }
-    console.log(popupLogin);
+    setPopupLogin(!popupLogin);
   }
 
   return (
+
+    <BrowserRouter>
     <div className="App">
+      <GlobalStyle />
       <Header toggleLogin={toggleLogin}></Header>
 
-      <div className="Body">
-        <Link to="/post">
-          <Body />
-        </Link>
-      </div>
+        <Switch>
+          <Route exact path="/" component={Body}></Route>
+          <Route path="/search" component={Search}></Route>
+          <Route path="/post" component={() => <Post post={sample_post}> </Post>}></Route>
+          <Route exact path="/profile1" component={Profile1}></Route>
+          <Route path="/User1post" component={User1post}></Route>
+          <Route path="/User1info" component={User1info}></Route>
+          <Route path="/User1series" component={User1series}></Route>
+        </Switch>
+
 
       <Footer></Footer>
 
-      {popupLogin === 1 ? <Login toggleLogin={toggleLogin}></Login> : null}
+      {popupLogin ? <Login toggleLogin={toggleLogin}></Login> : null}
     </div>
+
+    </BrowserRouter>
   );
 }
 

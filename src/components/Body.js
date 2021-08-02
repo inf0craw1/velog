@@ -4,7 +4,7 @@ import rupi from "../img/rupi.png";
 import React from "react";
 import "../css/Body.css";
 import styled from "styled-components";
-import {Link} from 'react-router-dom'
+import {BrowserRouter, Link} from 'react-router-dom'
 
 const Img = styled.div`
   width: 310px;
@@ -174,6 +174,7 @@ const BodyBlock = styled.div`
 
 function Body() {
   return (
+    <BrowserRouter>
     <div className="container">
       <BodyBlock className="item">
         <PostBlock />
@@ -212,6 +213,7 @@ function Body() {
         </div>
       </BodyBlock>
     </div>
+    </BrowserRouter>
   );
 }
 export default Body;

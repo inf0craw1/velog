@@ -138,7 +138,7 @@ function Login({toggleLogin, ...args}) {
                     <StyledH4>이메일로 로그인</StyledH4>
 
                     <StyledInputRow>
-                        <StyledInput></StyledInput>
+                        <StyledInput placeholder="example@example.com"></StyledInput>
                         <StyledLoginButton>로그인</StyledLoginButton>
 
                     </StyledInputRow>

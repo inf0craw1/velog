@@ -11,19 +11,15 @@ import { useState } from "react";
 import GlobalStyle from "./styles/GlobalStyle";
 
 function App() {
-  const [popupLogin, setPopupLogin] = useState(0);
+  const [popupLogin, setPopupLogin] = useState(false);
 
   function toggleLogin() {
-    if (popupLogin) {
-      setPopupLogin(0);
-    } else {
-      setPopupLogin(1);
-    }
-    console.log(popupLogin);
+    setPopupLogin(!popupLogin);
   }
 
   return (
     <div className="App">
+      <GlobalStyle />
       <Header toggleLogin={toggleLogin}></Header>
 
       <div className="Body">
@@ -34,7 +30,7 @@ function App() {
 
       <Footer></Footer>
 
-      {popupLogin === 1 ? <Login toggleLogin={toggleLogin}></Login> : null}
+      {popupLogin ? <Login toggleLogin={toggleLogin}></Login> : null}
     </div>
   );
 }

@@ -23,6 +23,7 @@ const HashTagWrapper = styled.div`
   align-items: center;
   justify-content: center;
   color: #15b885;
+  margin-bottom: 20px;
 `;
 const HashTagListWrapper = styled.div`
   display: flex;

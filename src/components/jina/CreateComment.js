@@ -6,7 +6,9 @@ function CreateComment() {
     <CreateCommentBlock>
       <div className="num_of_comments">댓글 수 100개</div>
       <InputBlock placeholder="댓글을 작성하세요" />
-      <WriteButton>등록</WriteButton>
+      <div className="button_wrapper">
+        <WriteButton>등록</WriteButton>
+      </div>
     </CreateCommentBlock>
   );
 }
@@ -14,15 +16,21 @@ function CreateComment() {
 const CreateCommentBlock = styled.div`
   .num_of_comments {
     font-weight: bold;
+    margin-bottom: 8px;
+  }
+  .button_wrapper {
+    display: flex;
+    flex-direction: row-reverse;
   }
 `;
 const InputBlock = styled.input`
   width: 100%;
   padding: 30px 10px;
   border: 1px solid #eaeaea;
-  color: #eaeaea;
+  /* color: #eaeaea; */
   font-size: 15px;
   border-radius: 8px;
+  margin-bottom: 20px;
 `;
 const WriteButton = styled.button`
   background-color: #21c896;

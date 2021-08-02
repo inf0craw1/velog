@@ -1,13 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
-function CreateComment() {
+function CreateComment({ createComment }) {
+  const [input, setInput] = useState("");
+  const onChange = (e) => {
+    setInput(e.target.value);
+    console.log("inpue", input);
+  };
+
   return (
     <CreateCommentBlock>
       <div className="num_of_comments">댓글 수 100개</div>
-      <InputBlock placeholder="댓글을 작성하세요" />
+      <InputBlock placeholder="댓글을 작성하세요" onChange={onChange} />
       <div className="button_wrapper">
-        <WriteButton>등록</WriteButton>
+        <WriteButton onClick={() => createComment(input)}>등록</WriteButton>
       </div>
     </CreateCommentBlock>
   );

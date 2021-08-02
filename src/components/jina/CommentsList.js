@@ -1,49 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 
-const SAMPLE_COMMENTS_DATA = [
-  {
-    id: 0,
-    user: {
-      profile: "",
-      id: "jina",
-    },
-    text: "우와 대박~",
-    date: "2일전",
-  },
-  {
-    id: 1,
-    user: {
-      profile: "",
-      id: "banana",
-    },
-    text: "와우!",
-    date: "1일전",
-  },
-  {
-    id: 2,
-    user: {
-      profile: "",
-      id: "vrvr",
-    },
-    text: "오~",
-    date: "3일전",
-  },
-  {
-    id: 3,
-    user: {
-      profile: "",
-      id: "ham",
-    },
-    text: "굳",
-    date: "5일전",
-  },
-];
-
-function CommentsList({ user, text }) {
+function CommentsList({ comments }) {
   return (
     <>
-      {SAMPLE_COMMENTS_DATA.map((comment) => (
+      {comments.map((comment) => (
         <CommentBlock>
           <div key={comment.id}>
             <div className="user_info">

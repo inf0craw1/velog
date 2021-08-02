@@ -28,8 +28,18 @@ function PostHeader({ title, author, date, thumnail }) {
 
 function Post({ post }) {
   const [comments, setComment] = useState(SAMPLE_COMMENTS_DATA);
-  const createComment = (comment) => {
-    setComment(comments.concat(comment));
+  const createComment = (text) => {
+    let data = {
+      id: 10,
+      user: {
+        profile: "",
+        id: "ham",
+      },
+      text: text,
+      date: "5일전",
+    };
+
+    setComment(comments.concat(data));
   };
 
   console.log("comments", comments);

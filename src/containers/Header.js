@@ -23,7 +23,6 @@ function Header({toggleLogin, ...args}) {
             </Link>
             <HeaderRight toggleLogin={toggleLogin}></HeaderRight>
         </StyledHeader> 
-
     );
 }
 

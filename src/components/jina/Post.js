@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import GlobalStyle from "../../styles/GlobalStyle";
 import styled from "styled-components";
 import HashTagList from "./HashTagList";
-import Comment from "./CreateComment";
+import CreateComment from "./CreateComment";
 import CommentsList from "./CommentsList";
 import LeftsideUtil from "./LeftsideUtil";
 import pizzaThumnail from "./pizza.jpeg";
@@ -27,7 +27,12 @@ function PostHeader({ title, author, date, thumnail }) {
 }
 
 function Post({ post }) {
-  console.log(post);
+  const [comments, setComment] = useState(SAMPLE_COMMENTS_DATA);
+  const createComment = (comment) => {
+    setComment(comments.concat(comment));
+  };
+
+  console.log("comments", comments);
   return (
     <div className="App">
       <GlobalStyle />
@@ -42,8 +47,8 @@ function Post({ post }) {
           ></PostHeader>
           <ContentsWrapper>{post.contents}</ContentsWrapper>
           <div className="tmp">프로필란</div>
-          <Comment />
-          <CommentsList />
+          <CreateComment createComment={createComment} />
+          <CommentsList comments={comments} />
         </div>
       </PostWrapper>
     </div>
@@ -96,5 +101,44 @@ const ThumnailWrapper = styled.div`
   border-radius: 20px;
   margin: 40px 0;
 `;
+
+const SAMPLE_COMMENTS_DATA = [
+  {
+    id: 0,
+    user: {
+      profile: "",
+      id: "jina",
+    },
+    text: "우와 대박~",
+    date: "2일전",
+  },
+  {
+    id: 1,
+    user: {
+      profile: "",
+      id: "banana",
+    },
+    text: "와우!",
+    date: "1일전",
+  },
+  {
+    id: 2,
+    user: {
+      profile: "",
+      id: "vrvr",
+    },
+    text: "오~",
+    date: "3일전",
+  },
+  {
+    id: 3,
+    user: {
+      profile: "",
+      id: "ham",
+    },
+    text: "굳",
+    date: "5일전",
+  },
+];
 
 export default Post;

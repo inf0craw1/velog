@@ -4,7 +4,7 @@ import rupi from "../img/rupi.png";
 import React from "react";
 import "../css/Body.css";
 import styled from "styled-components";
-import {BrowserRouter, Link} from 'react-router-dom'
+import { BrowserRouter, Link } from "react-router-dom";
 
 const Img = styled.div`
   width: 310px;
@@ -102,7 +102,7 @@ function PostBlock1() {
       <div style={{ cursor: "pointer" }}>
         <Img1 />
         <Title> 스타트업 4년차에 억대연봉 개발자</Title>
-        <Post>
+        <Post Link to={"/post/1"}>
           {" "}
           4년차에 억대 연봉을 달성한 스타트업 개발자 삼촌님에게 듣는 현실적인
           자기성장 조언{" "}
@@ -175,44 +175,44 @@ const BodyBlock = styled.div`
 function Body() {
   return (
     <BrowserRouter>
-    <div className="container">
-      <BodyBlock className="item">
-        <PostBlock />
-        <Border />
-        <div style={{ display: "flex" }}>
-          <FooterBlock>
-            <Link to="/Profile1">
-              <User />
-            </Link>  
-          </FooterBlock>
-          <Likes>❤ n</Likes>
-        </div>
-      </BodyBlock>
-      <BodyBlock className="item">
-        <PostBlock1 />
-        <Border />
-        <div style={{ display: "flex" }}>
-          <FooterBlock>
-            <Link to="/Profile2">
-              <User1 />      
-            </Link>        
-          </FooterBlock>
-          <Likes>❤ n</Likes>
-        </div>
-      </BodyBlock>
-      <BodyBlock className="item">
-        <PostBlock2 />
-        <Border />
-        <div style={{ display: "flex" }}>
-          <FooterBlock>
-            <Link to="/Profile3">
-              <User2 />      
-            </Link>
-          </FooterBlock>
-          <Likes>❤ n</Likes>
-        </div>
-      </BodyBlock>
-    </div>
+      <div className="container">
+        <BodyBlock className="item">
+          <PostBlock />
+          <Border />
+          <div style={{ display: "flex" }}>
+            <FooterBlock>
+              <Link to="/Profile1">
+                <User />
+              </Link>
+            </FooterBlock>
+            <Likes>❤ n</Likes>
+          </div>
+        </BodyBlock>
+        <BodyBlock className="item">
+          <PostBlock1 />
+          <Border />
+          <div style={{ display: "flex" }}>
+            <FooterBlock>
+              <Link to="/Profile2">
+                <User1 />
+              </Link>
+            </FooterBlock>
+            <Likes>❤ n</Likes>
+          </div>
+        </BodyBlock>
+        <BodyBlock className="item">
+          <PostBlock2 />
+          <Border />
+          <div style={{ display: "flex" }}>
+            <FooterBlock>
+              <Link to="/Profile3">
+                <User2 />
+              </Link>
+            </FooterBlock>
+            <Likes>❤ n</Likes>
+          </div>
+        </BodyBlock>
+      </div>
     </BrowserRouter>
   );
 }

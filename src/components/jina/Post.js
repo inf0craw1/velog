@@ -7,6 +7,8 @@ import CommentsList from "./CommentsList";
 import LeftsideUtil from "./LeftsideUtil";
 import pizzaThumnail from "./pizza.jpeg";
 
+import colors from "../../styles/colors";
+
 function Thumnail({ thumnail }) {
   return <ThumnailWrapper></ThumnailWrapper>;
 }
@@ -67,7 +69,7 @@ function Post({ post }) {
 
 const SomethingBlock = styled.div`
   height: 150px;
-  background-color: #f8f9fa;
+  background-color: ${colors.gray};
   border-radius: 8px;
 `;
 

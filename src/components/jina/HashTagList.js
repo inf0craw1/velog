@@ -1,15 +1,16 @@
 import React from "react";
 import styled from "styled-components";
 
-function HashTag() {
-  return <HashTagWrapper>GET</HashTagWrapper>;
+function HashTag({ hashtag }) {
+  return <HashTagWrapper>{hashtag}</HashTagWrapper>;
 }
 
-function HashTagList() {
+function HashTagList({ hashtags }) {
   return (
     <HashTagListWrapper>
-      <HashTag />
-      <HashTag />
+      {hashtags.map((hashtag) => {
+        return <HashTag hashtag={hashtag} />;
+      })}
     </HashTagListWrapper>
   );
 }

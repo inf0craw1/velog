@@ -7,7 +7,7 @@ import Footer from "./components/Footer";
 import Post from "./components/jina/Post";
 
 import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
-// import Profile1 from "./components/profile1";
+import Profile1 from "./components/profile1";
 import User1post from "./components/users/User1post";
 import User1info from "./components/users/User1info";
 import User1series from "./components/users/User1series";
@@ -34,7 +34,6 @@ function App() {
           <Route exact path="/" component={Body}></Route>
           <Route path="/search" component={Search}></Route>
 
-          {/* <Route exact path="/profile1" component={Profile1}></Route> */}
           <Route path="/User1post" component={User1post}></Route>
           <Route path="/User1info" component={User1info}></Route>
           <Route path="/User1series" component={User1series}></Route>

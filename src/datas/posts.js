@@ -18,7 +18,7 @@ export const Posts = [
   },
   {
     idx: 1,
-    id: "heyheyhey ",
+    id: "heyheyhey",
     title: "4년차에 억대연봉 개발자",
     hashtag: ["꿀팁"],
     date: "20210715",

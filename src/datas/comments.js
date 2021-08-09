@@ -23,20 +23,28 @@ export const comments = [
 
   {
     postId: 1,
-    user: {
-      profile: "",
-      id: "banana",
-    },
-    text: "와우!",
-    date: "1일전",
+    commentData: [
+      {
+        user: {
+          profile: "",
+          id: "vrvr",
+        },
+        text: "유용해요",
+        date: "2일전",
+      },
+    ],
   },
   {
     postId: 2,
-    user: {
-      profile: "",
-      id: "vrvr",
-    },
-    text: "오~",
-    date: "3일전",
+    commentData: [
+      {
+        user: {
+          profile: "",
+          id: "hamster",
+        },
+        text: "정말 재밋겠다~",
+        date: "1일전",
+      },
+    ],
   },
 ];

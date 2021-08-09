@@ -33,12 +33,20 @@ function PostHeader({ title, author, date, thumnail, hashtags }) {
 function Post({ match }) {
   const userid = match.params.userid;
   const title = match.params.title;
+
+  console.log(userid, title);
+
   const post = Posts.filter(
     (post) => post.id == userid && post.title == title
   )[0];
+
+  console.log(post);
+
   const comments_data = comments.filter(
     (comment) => comment.postId == post.idx
   )[0].commentData;
+
+  console.log(comments_data);
 
   const [comments_list, setComment] = useState(comments_data);
   const createComment = (text) => {

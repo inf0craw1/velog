@@ -8,12 +8,14 @@ import LeftsideUtil from "./LeftsideUtil";
 import pizzaThumnail from "./pizza.jpeg";
 
 import colors from "../../styles/colors";
+import { Posts } from "../../datas/posts";
+import { comments } from "../../datas/comments";
 
 function Thumnail({ thumnail }) {
   return <ThumnailWrapper></ThumnailWrapper>;
 }
 
-function PostHeader({ title, author, date, thumnail }) {
+function PostHeader({ title, author, date, thumnail, hashtags }) {
   return (
     <div>
       <TitleWrapper>{title}</TitleWrapper>
@@ -21,18 +23,26 @@ function PostHeader({ title, author, date, thumnail }) {
         <AuthorWrapper>{author}</AuthorWrapper>
         <DateWrapper>{date}</DateWrapper>
       </InformationWrapper>
-      <HashTagList />
+      <HashTagList hashtags={hashtags} />
       <SomethingBlock></SomethingBlock>
       <Thumnail thumnail={thumnail} />
     </div>
   );
 }
 
-function Post({ post }) {
-  const [comments, setComment] = useState(SAMPLE_COMMENTS_DATA);
+function Post({ match }) {
+  const userid = match.params.userid;
+  const title = match.params.title;
+  const post = Posts.filter(
+    (post) => post.id == userid && post.title == title
+  )[0];
+  const comments_data = comments.filter(
+    (comment) => comment.postId == post.idx
+  )[0].commentData;
+
+  const [comments_list, setComment] = useState(comments_data);
   const createComment = (text) => {
     let data = {
-      id: 10,
       user: {
         profile: "",
         id: "ham",
@@ -40,11 +50,9 @@ function Post({ post }) {
       text: text,
       date: "5일전",
     };
-
-    setComment(comments.concat(data));
+    setComment(comments_list.concat(data));
   };
 
-  console.log("comments", comments);
   return (
     <div className="App">
       <GlobalStyle />
@@ -53,14 +61,15 @@ function Post({ post }) {
         <div>
           <PostHeader
             title={post.title}
-            author={post.author}
+            author={post.id}
             date={post.date}
             thumnail={post.thumnail}
+            hashtags={post.hashtag}
           ></PostHeader>
-          <ContentsWrapper>{post.contents}</ContentsWrapper>
+          <ContentsWrapper>{post.content}</ContentsWrapper>
           <div className="tmp">프로필란</div>
           <CreateComment createComment={createComment} />
-          <CommentsList comments={comments} />
+          <CommentsList comments={comments_list} />
         </div>
       </PostWrapper>
     </div>

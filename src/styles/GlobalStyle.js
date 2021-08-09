@@ -13,7 +13,6 @@ body {
 }
 .App {
   width: 1000px;
-  height: 1000px;
 }
 
 `;

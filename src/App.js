@@ -12,12 +12,10 @@ import User1post from "./components/users/User1post";
 import User1info from "./components/users/User1info";
 import User1series from "./components/users/User1series";
 import Search from "./containers/Search";
-import PostSample from "./components/jina/PostSampleData";
 
 import GlobalStyle from "./styles/GlobalStyle";
 
 function App() {
-  const sample_post = PostSample;
   const [popupLogin, setPopupLogin] = useState(false);
 
   function toggleLogin() {

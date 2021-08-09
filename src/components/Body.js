@@ -5,6 +5,9 @@ import React from "react";
 import "../css/Body.css";
 import styled from "styled-components";
 import { BrowserRouter, Link } from "react-router-dom";
+import colors from '../styles/colors';
+
+import { Posts } from "../datas/posts";
 
 const Img = styled.div`
   width: 310px;
@@ -74,25 +77,27 @@ const FooterBlock = styled.div`
   padding-left: 15px;
 `;
 const Likes = styled.div`
+  color: ${colors.black};
   margin-top: 10px;
   position: relative;
   left: 30px;
   font-size: 13px;
   padding-left: 15px;
 `;
-function PostBlock() {
+function PostBlock({post = {title: 'abc'}}) {
   return (
     <div style={{ height: "290px" }}>
+      {console.log(post)}
       <div style={{ cursor: "pointer" }}>
         <Img />
-        <Title> 프론트엔드 면접 문제 2탄 ⭐️</Title>
+        <Title> { post.title }</Title>
         <Post>
           {" "}
           지난번엔 HTML편이었는데 이번엔 CSS 관련 문제들로 정리해봤습니다.
           오늘도 프론트엔드 화이팅..!{" "}
         </Post>
       </div>
-      <Info>2021년 7월 9일 · 0개의 댓글</Info>
+      <Info>년 7월 9일 · 0개의 댓글</Info>
     </div>
   );
 }
@@ -124,12 +129,12 @@ function PostBlock2() {
     </div>
   );
 }
-function User() {
+function User({ id = 'id', profileImg = '🦄'}) {
   return (
     <div style={{ display: "flex", cursor: "pointer" }}>
-      <div style={{ width: "22px" }}>🦄</div>
+      <div style={{ width: "22px" }}>{profileImg}</div>
       <div style={{ width: "22px" }}>by</div>
-      <b>jsy1999</b>
+      <b>{ id }</b>
     </div>
   );
 }
@@ -174,8 +179,26 @@ const BodyBlock = styled.div`
 
 function Body() {
   return (
-    <BrowserRouter>
       <div className="container">
+
+        {
+          Posts.map( (post) => 
+            <BodyBlock className="item">
+              <Link to={'/post/' + post.id + '/' + post.title} style={{textDecoration: 'none', color: colors.black}}>
+                <PostBlock post={post}/>
+              </Link>
+              <Border />
+              <div style={{ display: "flex" }}>
+                <Link to={'/profile/1'} style={{textDecoration: 'none', color: colors.black}}>
+                  <FooterBlock>
+                      <User id={post.id} />
+                  </FooterBlock>
+                </Link>
+                <Likes>❤ {post.like}</Likes>
+              </div>
+            </BodyBlock>
+        )
+        }
         <BodyBlock className="item">
           <PostBlock />
           <Border />
@@ -213,7 +236,6 @@ function Body() {
           </div>
         </BodyBlock>
       </div>
-    </BrowserRouter>
   );
 }
 export default Body;

@@ -4,15 +4,25 @@ import rupi from "../img/rupi.png";
 import React from "react";
 import "../css/Body.css";
 import styled from "styled-components";
-import { BrowserRouter, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import colors from '../styles/colors';
 
 import { Posts } from "../datas/posts";
+import { Users } from "../datas/users";
+import { comments } from "../datas/comments";
 
+const StyledProfileImg = styled.div`
+width: 22px;
+height: 22px;
+background-size: 100% auto;
+background-position: center;
+border-radius: 100%;
+margin-right: 4px;
+margin-top: -4px;
+`;
 const Img = styled.div`
   width: 310px;
   height: 175px;
-  background-image: url(${smile});
   background-size: 100% auto;
   background-position: center;
   border-top-left-radius: 16px;
@@ -47,7 +57,9 @@ const Title = styled.h1`
 `;
 const Post = styled.div`
   width: 285px;
-  height: 60px;
+  height: 50px;
+  overflow: hidden;
+  text-overflow: ellipsis;
   display: inline-block;
   list-style: none;
   margin-top: 10px;
@@ -84,20 +96,18 @@ const Likes = styled.div`
   font-size: 13px;
   padding-left: 15px;
 `;
+
 function PostBlock({post = {title: 'abc'}}) {
   return (
     <div style={{ height: "290px" }}>
-      {console.log(post)}
       <div style={{ cursor: "pointer" }}>
-        <Img />
+        <Img style={{backgroundImage: `url('./img/thumbnails/${post.thumbnail}')`}}/>
         <Title> { post.title }</Title>
         <Post>
-          {" "}
-          지난번엔 HTML편이었는데 이번엔 CSS 관련 문제들로 정리해봤습니다.
-          오늘도 프론트엔드 화이팅..!{" "}
+          {post.content}
         </Post>
       </div>
-      <Info>년 7월 9일 · 0개의 댓글</Info>
+      <Info>{post.date.substr(0, 4)}년 {post.date.substr(4, 2)}월 {post.date.substr(6, 2)}일 · {comments.filter(comment => comment.postId === post.idx)[0].commentData.length}개의 댓글</Info>
     </div>
   );
 }
@@ -129,10 +139,11 @@ function PostBlock2() {
     </div>
   );
 }
-function User({ id = 'id', profileImg = '🦄'}) {
+function User({ id = 'id', user}) {
   return (
     <div style={{ display: "flex", cursor: "pointer" }}>
-      <div style={{ width: "22px" }}>{profileImg}</div>
+      {console.log(user)}
+      <StyledProfileImg style={{backgroundImage: `url('./img/profiles/${user.profile}')`}}></StyledProfileImg>
       <div style={{ width: "22px" }}>by</div>
       <b>{ id }</b>
     </div>
@@ -182,16 +193,16 @@ function Body() {
       <div className="container">
 
         {
-          Posts.map( (post) => 
-            <BodyBlock className="item">
+          Posts.map( (post, idx) => 
+            <BodyBlock className="item" key={'BodyBlock' + idx}>
               <Link to={'/post/' + post.id + '/' + post.title} style={{textDecoration: 'none', color: colors.black}}>
                 <PostBlock post={post}/>
               </Link>
               <Border />
-              <div style={{ display: "flex" }}>
+              <div style={{ display: "flex", alignItems: "center"}}>
                 <Link to={'/profile/1'} style={{textDecoration: 'none', color: colors.black}}>
                   <FooterBlock>
-                      <User id={post.id} />
+                      <User id={post.id} user={Users.filter((user) => user.id === post.id)[0]} />
                   </FooterBlock>
                 </Link>
                 <Likes>❤ {post.like}</Likes>
@@ -199,42 +210,7 @@ function Body() {
             </BodyBlock>
         )
         }
-        <BodyBlock className="item">
-          <PostBlock />
-          <Border />
-          <div style={{ display: "flex" }}>
-            <FooterBlock>
-              <Link to="/Profile1">
-                <User />
-              </Link>
-            </FooterBlock>
-            <Likes>❤ n</Likes>
-          </div>
-        </BodyBlock>
-        <BodyBlock className="item">
-          <PostBlock1 />
-          <Border />
-          <div style={{ display: "flex" }}>
-            <FooterBlock>
-              <Link to="/Profile2">
-                <User1 />
-              </Link>
-            </FooterBlock>
-            <Likes>❤ n</Likes>
-          </div>
-        </BodyBlock>
-        <BodyBlock className="item">
-          <PostBlock2 />
-          <Border />
-          <div style={{ display: "flex" }}>
-            <FooterBlock>
-              <Link to="/Profile3">
-                <User2 />
-              </Link>
-            </FooterBlock>
-            <Likes>❤ n</Likes>
-          </div>
-        </BodyBlock>
+        
       </div>
   );
 }

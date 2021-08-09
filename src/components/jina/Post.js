@@ -31,23 +31,13 @@ function PostHeader({ title, author, date, thumnail, hashtags }) {
 }
 
 function Post({ match }) {
-  const userid = match.params.userid;
-  const title = match.params.title;
-
-  console.log(userid, title);
-
+  const { userid, title } = match.params;
   const post = Posts.filter(
     (post) => post.id == userid && post.title == title
   )[0];
-
-  console.log(post);
-
   const comments_data = comments.filter(
     (comment) => comment.postId == post.idx
   )[0].commentData;
-
-  console.log(comments_data);
-
   const [comments_list, setComment] = useState(comments_data);
   const createComment = (text) => {
     let data = {
@@ -133,44 +123,5 @@ const ThumnailWrapper = styled.div`
   border-radius: 20px;
   margin: 40px 0;
 `;
-
-const SAMPLE_COMMENTS_DATA = [
-  {
-    id: 0,
-    user: {
-      profile: "",
-      id: "jina",
-    },
-    text: "우와 대박~",
-    date: "2일전",
-  },
-  {
-    id: 1,
-    user: {
-      profile: "",
-      id: "banana",
-    },
-    text: "와우!",
-    date: "1일전",
-  },
-  {
-    id: 2,
-    user: {
-      profile: "",
-      id: "vrvr",
-    },
-    text: "오~",
-    date: "3일전",
-  },
-  {
-    id: 3,
-    user: {
-      profile: "",
-      id: "ham",
-    },
-    text: "굳",
-    date: "5일전",
-  },
-];
 
 export default Post;

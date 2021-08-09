@@ -12,7 +12,14 @@ function CreateComment({ num, createComment }) {
       <div className="num_of_comments">댓글 수 {num}개</div>
       <InputBlock placeholder="댓글을 작성하세요" onChange={onChange} />
       <div className="button_wrapper">
-        <WriteButton onClick={() => createComment(input)}>등록</WriteButton>
+        <WriteButton
+          onClick={() => {
+            createComment(input);
+            setInput("");
+          }}
+        >
+          등록
+        </WriteButton>
       </div>
     </CreateCommentBlock>
   );

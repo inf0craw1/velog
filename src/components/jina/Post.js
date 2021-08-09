@@ -76,7 +76,10 @@ function Post({ match }) {
           ></PostHeader>
           <ContentsWrapper>{post.content}</ContentsWrapper>
           <div className="tmp">프로필란</div>
-          <CreateComment createComment={createComment} />
+          <CreateComment
+            num={comments_list.length}
+            createComment={createComment}
+          />
           <CommentsList comments={comments_list} />
         </div>
       </PostWrapper>

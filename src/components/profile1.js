@@ -1,27 +1,30 @@
-import React from 'react';
+import React from "react";
+import { Link, useLocation } from "react-router-dom";
+import SidebarItem from "./SidebarItem";
 import './Profile.css';
-import Header from "../containers/Header";
 
-const MenuItem = ({active, children, to}) => (
-    <div className="menu-item">
-            {children}
+function Profile1() {
+    const pathName = useLocation().pathname;
+  const menus = [
+    { name: "글", path: "/profile1" },
+    { name: "시리즈", path: "/User1series" },
+    { name: "소개", path: "/User1info" }
+  ];
+
+  return (
+    <div className="sidebar">
+      {menus.map((menu, index) => {
+        return (
+          <Link to={menu.path} key={index}>
+            <SidebarItem
+              menu={menu}
+              isActive={pathName === menu.path ? true : false}
+            />
+          </Link>
+        );
+      })}
     </div>
-)
-
-const Profile1 = () => {
-    return (
-        <div>
-            <div className="logo">
-                <Header></Header>
-                <div className="menu">
-                    <MenuItem to={'/User1post'}>글</MenuItem>
-                    <MenuItem to={'/User1series'}>시리즈</MenuItem>
-                    <MenuItem to={'/User1info'}>소개</MenuItem>
-                    </div>
-            </div>
-            
-        </div>
-    );
-};
+  );
+}
 
 export default Profile1;

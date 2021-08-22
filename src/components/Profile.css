@@ -20,10 +20,23 @@
     text-decoration: none;
 }
 
+.menu-item-active {
+    display: inline-block;
+    color: green;
+    font-size: 1rem;
+    line-height: 3.5rem;
+    width: 33.3333%;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none;
+}
+
 .menu-item:hover {
-    background-color: #495057;
+    background-color: white;
 }
 
 .menu-item:active, .menu-item.active {
-    background-color: #1862ab;
+    color:lightgreen;
+    border-bottom: solid 1px lightgreen;
 }

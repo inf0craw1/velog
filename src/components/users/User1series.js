@@ -1,11 +1,19 @@
-import React from 'react';
+import React, { Component } from "react";
+class User1series extends React.Component{
+    constructor(props) {
+      super();
+  
+      this.state = {
+        menu: 0,
+      };
+    }
 
-const User1series = ({children}) => {
-    return (
-        <div >
-            series
-        </div>
-    );
-};
-
-export default User1series;
+    render(){
+        return(
+            <div>User1series Page</div>
+        )
+    }
+  }
+  
+  
+  export default User1series;

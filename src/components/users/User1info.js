@@ -1,11 +1,20 @@
-import React from 'react';
+import React, { Component } from "react";
 
-const User1info = ({children}) => {
-    return (
-        <div >
-            info
-        </div>
-    );
-};
+class User1info extends React.Component{
+    constructor(props) {
+      super();
+  
+      this.state = {
+        menu: 0,
+      };
+    }
 
-export default User1info;
+    render(){
+        return(
+            <div>User1info Page</div>
+        )
+    }
+  }
+  
+  
+  export default User1info;

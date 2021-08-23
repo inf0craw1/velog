@@ -65,10 +65,47 @@ function ShareButton({ active }) {
       {active && (
         <ShareButtonWrapper>
           <CopyToClipboard text={url}>
-            <ButtonWrapper onClick={onClick}>링크복사</ButtonWrapper>
+            <ButtonWrapper onClick={onClick}>
+              <div className="link">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20px"
+                  viewBox="0 0 107.75 123.143"
+                >
+                  <path
+                    id="Icon_awesome-paperclip"
+                    data-name="Icon awesome-paperclip"
+                    d="M10.4,112.113c-14.053-14.5-13.791-37.883.333-52.331l50.45-51.6a26.915,26.915,0,0,1,38.643,0,28,28,0,0,1,0,39.029L55.85,92.147a17.945,17.945,0,0,1-25.971-.24,18.64,18.64,0,0,1,.349-25.724L64.8,30.868a3.848,3.848,0,0,1,5.442-.058l5.5,5.382a3.848,3.848,0,0,1,.058,5.442L41.23,76.947a3.253,3.253,0,0,0-.156,4.4,2.564,2.564,0,0,0,3.773.04l43.978-44.94a12.6,12.6,0,0,0,0-17.509,11.535,11.535,0,0,0-16.632,0l-50.45,51.6a22.274,22.274,0,0,0-.286,30.861,20.512,20.512,0,0,0,29.6.069l41.383-42.33a3.848,3.848,0,0,1,5.442-.062l5.5,5.379a3.848,3.848,0,0,1,.062,5.442L62.056,112.23a35.887,35.887,0,0,1-51.655-.117Z"
+                    transform="translate(0 0)"
+                  />
+                </svg>
+              </div>
+            </ButtonWrapper>
           </CopyToClipboard>
-          <ButtonWrapper>페이스북 공유</ButtonWrapper>
-          <ButtonWrapper>트위터 공유</ButtonWrapper>
+          <ButtonWrapper>
+            <div className="facebook">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z" />
+              </svg>
+            </div>
+          </ButtonWrapper>
+          <ButtonWrapper>
+            <div className="twitter">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+              </svg>
+            </div>
+          </ButtonWrapper>
         </ShareButtonWrapper>
       )}
       <ToastmessageWrapper ref={toastMessageBox}>
@@ -154,6 +191,25 @@ const ButtonWrapper = styled.div`
   }
 
   .share {
+    fill: ${colors.gray};
+    :hover {
+      fill: ${colors.dark_gray};
+    }
+  }
+
+  .link {
+    fill: ${colors.gray};
+    :hover {
+      fill: ${colors.dark_gray};
+    }
+  }
+  .twitter {
+    fill: ${colors.gray};
+    :hover {
+      fill: ${colors.dark_gray};
+    }
+  }
+  .facebook {
     fill: ${colors.gray};
     :hover {
       fill: ${colors.dark_gray};

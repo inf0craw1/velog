@@ -35,10 +35,10 @@ function App() {
           <Route path="/User1info" component={User1info}></Route>
           <Route path="/User1series" component={User1series}></Route>
           <Route path="/post/:userid/:title" component={Post} />
-          <Route path="/Profile1" component={Profile1}></Route>
-          <Route path="/User1post" exact component={User1post}/>
-          <Route path="/User1info" component={User1post}/>
-          <Route path="/User1series" component={User1series}/>
+          {/* <Route path="/Profile1" component={Profile1}></Route> */}
+          <Route path="/User1post" exact component={User1post} />
+          <Route path="/User1info" component={User1post} />
+          <Route path="/User1series" component={User1series} />
         </Switch>
 
         <Footer></Footer>

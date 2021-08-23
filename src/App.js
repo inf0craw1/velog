@@ -6,8 +6,9 @@ import Login from "./containers/Login";
 import Footer from "./components/Footer";
 import Post from "./components/jina/Post";
 
-import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 // import Profile1 from "./components/Profile1";
+
 import User1post from "./components/users/User1post";
 import User1info from "./components/users/User1info";
 import User1series from "./components/users/User1series";

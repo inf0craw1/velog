@@ -3,7 +3,7 @@ import React from "react";
 
 const FooterBlock = styled.footer`
   border-top: 1px solid #efefef;
-  height: 400px;
+  height: 200px;
   width: 100%;
   color: #171717;
   font-size: 14px;
@@ -13,14 +13,17 @@ const FooterBlock = styled.footer`
 const FooterContainer = styled.div``;
 
 const ContentsFooter = styled.div`
+
   display: flex;
   margin-bottom: 10px;
 `;
 
-const Contents = styled.div``;
+const Contents = styled.div`
+`;
 
 const TitleFooter = styled.div`
   font-weight: 700;
+  width: 70px;
 `;
 
 function Footer() {
@@ -34,6 +37,10 @@ function Footer() {
         <ContentsFooter>
           <TitleFooter>Describe</TitleFooter>
           <Contents>velog project forfsfs react study</Contents>
+        </ContentsFooter>
+        <ContentsFooter>
+          <TitleFooter>Develop</TitleFooter>
+          <Contents>2021.07.05~2021.08.23</Contents>
         </ContentsFooter>
       </FooterContainer>
     </FooterBlock>

@@ -17,4 +17,22 @@ export const Users = [
     introduction: "저는 게임 개발자입니다.",
     url: ["https://www.tistory.com/"],
   },
+  {
+    id: "sruim410",
+    profile: "user4.jpeg",
+    introduction: "unior FrontEnd Developer 😎",
+    url: ["https://www.naver.com"],
+  },
+  {
+    id: "woodmetal",
+    profile: "user5.png",
+    introduction: "프론트엔드 개발자입니다.",
+    url: [],
+  },
+  {
+    id: "oneook",
+    profile: "user6.jpeg",
+    introduction: "가치 지향 프론트엔드 코린이 🧑🏻‍💻",
+    url: [],
+  }
 ];

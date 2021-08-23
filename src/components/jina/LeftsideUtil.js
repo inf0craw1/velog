@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import { CopyToClipboard } from "react-copy-to-clipboard";
+import React, { useState, useEffect, useRef } from "react";
 import styled, { css } from "styled-components";
 import colors from "../../styles/colors";
 
@@ -29,10 +30,20 @@ function LikeButton({ active }) {
   );
 }
 function ShareButton({ active }) {
+  const url = window.location.href;
+  const toastMessageBox = useRef();
   const [linkCopy, setLinkCopy] = useState(false);
   const onClick = () => {
     setLinkCopy(!linkCopy);
   };
+  useEffect(() => {
+    if (linkCopy) {
+      toastMessageBox.current.style.display = "flex";
+      setTimeout(() => {
+        toastMessageBox.current.style.display = "none";
+      }, 3000);
+    }
+  }, [linkCopy]);
 
   return (
     <>
@@ -53,14 +64,16 @@ function ShareButton({ active }) {
       </ButtonWrapper>
       {active && (
         <ShareButtonWrapper>
-          <ButtonWrapper onClick={onClick}>링크복사</ButtonWrapper>
+          <CopyToClipboard text={url}>
+            <ButtonWrapper onClick={onClick}>링크복사</ButtonWrapper>
+          </CopyToClipboard>
           <ButtonWrapper>페이스북 공유</ButtonWrapper>
           <ButtonWrapper>트위터 공유</ButtonWrapper>
         </ShareButtonWrapper>
       )}
-      {linkCopy && (
-        <ToastmessageWrapper>링크가 복사되었습니다.</ToastmessageWrapper>
-      )}
+      <ToastmessageWrapper ref={toastMessageBox}>
+        링크가 복사되었습니다.
+      </ToastmessageWrapper>
     </>
   );
 }
@@ -155,6 +168,8 @@ const ShareButtonWrapper = styled.div`
 `;
 
 const ToastmessageWrapper = styled.div`
+  display: none;
+
   position: fixed;
   z-index: 999;
   background-color: ${colors.green};
@@ -162,23 +177,19 @@ const ToastmessageWrapper = styled.div`
   height: 60px;
   color: white;
   font-weight: bold;
-  display: flex;
   align-items: center;
   justify-content: center;
   right: 40px;
   margin-top: -160px;
-
-  animation-name: showbox;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-
-  @keyframes showbox {
-    0% {
-      top: 10px;
+  /* animation: MoveUpDown 1s linear;
+  @keyframes MoveUpDown {
+    0%,
+    100% {
+      transform: translateY(0);
     }
-    20% {
-      top: 40px;
+    50% {
+      transform: translateY(-100px);
     }
-  }
+  } */
 `;
 export default LeftsideUtil;

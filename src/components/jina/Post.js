@@ -33,7 +33,7 @@ function PostHeader({ title, author, date, thumnail, hashtags }) {
 function Post({ match }) {
   const { userid, title } = match.params;
   const post = Posts.filter(
-    (post) => post.id == userid && post.title == title
+    (post) => post.id === userid && post.title == title
   )[0];
 
   const comments_data = comments.filter(

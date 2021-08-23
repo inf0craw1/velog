@@ -1,0 +1,12 @@
+.container {
+  margin-left: -20px;
+  display: felx;
+  justify-content: space-between;
+}
+.item {
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in;
+  &:hover {
+    transform: translateY(-3%);
+  }
+}

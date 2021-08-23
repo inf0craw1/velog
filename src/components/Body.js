@@ -2,7 +2,7 @@ import smile from "../img/smile.jpg";
 import img2 from "../img/img_2.jpg";
 import rupi from "../img/rupi.png";
 import React from "react";
-import "../css/Body.css";
+import "../css/Body.scss";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import colors from '../styles/colors';

@@ -24,7 +24,6 @@ function PostHeader({ title, author, date, thumnail, hashtags }) {
         <DateWrapper>{date}</DateWrapper>
       </InformationWrapper>
       <HashTagList hashtags={hashtags} />
-      <SomethingBlock></SomethingBlock>
       <Thumnail thumnail={thumnail} />
     </div>
   );

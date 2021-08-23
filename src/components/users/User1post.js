@@ -1,11 +1,20 @@
-import React from 'react';
+import React, { Component } from "react";
 
-const User1post = ({children}) => {
-    return (
-        <div >
-            post
-        </div>
-    );
-};
+class User1post extends React.Component{
+    constructor(props) {
+      super();
+  
+      this.state = {
+        menu: 0,
+      };
+    }
 
-export default User1post;
+    render(){
+        return(
+            <div>User1post Page</div>
+        )
+    }
+  }
+  
+  
+  export default User1post;

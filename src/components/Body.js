@@ -200,7 +200,7 @@ function Body() {
               </Link>
               <Border />
               <div style={{ display: "flex", alignItems: "center"}}>
-                <Link to={'/profile/1'} style={{textDecoration: 'none', color: colors.black}}>
+                <Link to={'/profile1'} style={{textDecoration: 'none', color: colors.black}}>
                   <FooterBlock>
                       <User id={post.id} user={Users.filter((user) => user.id === post.id)[0]} />
                   </FooterBlock>

@@ -12,12 +12,10 @@ import User1post from "./components/users/User1post";
 import User1info from "./components/users/User1info";
 import User1series from "./components/users/User1series";
 import Search from "./containers/Search";
-import PostSample from "./components/jina/PostSampleData";
 
 import GlobalStyle from "./styles/GlobalStyle";
 
 function App() {
-  const sample_post = PostSample;
   const [popupLogin, setPopupLogin] = useState(false);
 
   function toggleLogin() {
@@ -37,6 +35,10 @@ function App() {
           <Route path="/User1info" component={User1info}></Route>
           <Route path="/User1series" component={User1series}></Route>
           <Route path="/post/:userid/:title" component={Post} />
+          <Route path="/Profile1" component={Profile1}></Route>
+          <Route path="/User1post" exact component={User1post}/>
+          <Route path="/User1info" component={User1post}/>
+          <Route path="/User1series" component={User1series}/>
         </Switch>
 
         <Footer></Footer>

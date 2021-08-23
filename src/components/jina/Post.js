@@ -35,9 +35,11 @@ function Post({ match }) {
   const post = Posts.filter(
     (post) => post.id == userid && post.title == title
   )[0];
+
   const comments_data = comments.filter(
-    (comment) => comment.postId == post.idx
+    (comment) => comment.postId === post.idx
   )[0].commentData;
+
   const [comments_list, setComment] = useState(comments_data);
   const createComment = (text) => {
     let data = {

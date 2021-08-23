@@ -30,6 +30,9 @@ function LikeButton({ active }) {
 }
 function ShareButton({ active }) {
   const [linkCopy, setLinkCopy] = useState(false);
+  const onClick = () => {
+    setLinkCopy(!linkCopy);
+  };
 
   return (
     <>
@@ -50,14 +53,14 @@ function ShareButton({ active }) {
       </ButtonWrapper>
       {active && (
         <ShareButtonWrapper>
-          <ButtonWrapper onClick={() => console.log("hi")}>
-            링크복사
-          </ButtonWrapper>
+          <ButtonWrapper onClick={onClick}>링크복사</ButtonWrapper>
           <ButtonWrapper>페이스북 공유</ButtonWrapper>
           <ButtonWrapper>트위터 공유</ButtonWrapper>
         </ShareButtonWrapper>
       )}
-      <ToastmessageWrapper>링크가 복사되었습니다.</ToastmessageWrapper>
+      {linkCopy && (
+        <ToastmessageWrapper>링크가 복사되었습니다.</ToastmessageWrapper>
+      )}
     </>
   );
 }
@@ -105,7 +108,6 @@ const LeftsideUtilWrapper = styled.div`
 
 const ButtonWrapper = styled.div`
   font-size: 3px;
-
   :hover {
     border: 1px solid ${colors.dark_gray};
   }
@@ -165,5 +167,18 @@ const ToastmessageWrapper = styled.div`
   justify-content: center;
   right: 40px;
   margin-top: -160px;
+
+  animation-name: showbox;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+
+  @keyframes showbox {
+    0% {
+      top: 10px;
+    }
+    20% {
+      top: 40px;
+    }
+  }
 `;
 export default LeftsideUtil;
